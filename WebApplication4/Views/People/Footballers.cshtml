@@ -1,0 +1,22 @@
+﻿@model IEnumerable<WebApplication4.Models.Footballer>
+
+<h2>Footballers</h2>
+
+<ul>
+    @foreach (var footballer in Model)
+    {
+        <li>@footballer.FirstName @footballer.LastName</li>
+    }
+</ul>
+
+<h3>Add Footballer</h3>
+@using (Html.BeginForm("AddFootballer", "People", FormMethod.Post))
+{
+    <label for="FirstName">First Name</label>
+    <input type="text" name="FirstName" />
+
+    <label for="LastName">Last Name</label>
+    <input type="text" name="LastName" />
+
+    <button type="submit">Add</button>
+}
